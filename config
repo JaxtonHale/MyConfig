@@ -52,7 +52,7 @@ bindsym $mod+Shift+q kill
 
 ##bindsym $mod+d exec dmenu_run
 
-####  ^^^^^ Currently not using dmenu, using rofi:
+####  ^^^^^ Not using dmenu, using rofi:
 
 bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 400 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 
@@ -236,6 +236,13 @@ bar {
 #######################################################################
 ####exec i3-config-wizard
 
+
+
+#### Set background using feh, in this case it is a random picture in the mentioned directory
+
+exec --no-startup-id feh --randomize --bg-fill ~/Pictures/Wallpapers/*
+
+
 #exec --no-startup-id pulseaudio
 #bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 -- +10% && killall -SIGUSR1 i3status
 #bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -- -10% && killall -SIGUSR1 i3status
@@ -246,4 +253,4 @@ bindsym XF86AudioMute exec ~/bin/toggle-mute
 bindsym XF86AudioPlay exec clementine --play-pause
 bindsym XF86AudioStop exec clementine --stop
 bindsym XF86AudioPrev exec clementine --previous
-bindsym XF86AudioNext exec clementine --nextd
+bindsym XF86AudioNext exec clementine --next
