@@ -207,7 +207,7 @@ bindsym XF86AudioPrev exec clementine --previous
 bindsym XF86AudioNext exec clementine --next
 
 # -f flag causes there to be a slight fade time when switching workspaces
-exec --no-startup-id compton -f
+exec --no-startup-id compton -f --config /home/bluenova/.config/compton.conf
 
 
 
@@ -295,6 +295,6 @@ bar {
 
 #### Set background using feh, in this case it is a random picture in the mentioned directory
 
-exec --no-startup-id feh --randomize --bg-fill ~/Pictures/Wallpapers/*
+####exec --no-startup-id feh --randomize --bg-fill ~/Pictures/Wallpapers/*
 
 
