@@ -193,18 +193,18 @@ bindsym $mod+r mode "resize"
 
 exec --no-startup-id feh --randomize --bg-fill ~/Pictures/Wallpapers/*
 
+bindsym --release Print exec scrot
+exec --no-startup-id pulseaudio
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 -- +10% && #killall -SIGUSR1 i3status
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -- -10% && #killall -SIGUSR1 i3status
 
-#exec --no-startup-id pulseaudio
-#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 -- +10% && killall -SIGUSR1 i3status
-#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -- -10% && killall -SIGUSR1 i3status
-
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -- -5%
-bindsym XF86AudioMute exec ~/bin/toggle-mute
-bindsym XF86AudioPlay exec clementine --play-pause
-bindsym XF86AudioStop exec clementine --stop
-bindsym XF86AudioPrev exec clementine --previous
-bindsym XF86AudioNext exec clementine --next
+#bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
+#bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -- -5%
+#bindsym XF86AudioMute exec ~/bin/toggle-mute
+#bindsym XF86AudioPlay exec clementine --play-pause
+#bindsym XF86AudioStop exec clementine --stop
+#bindsym XF86AudioPrev exec clementine --previous
+#bindsym XF86AudioNext exec clementine --next
 
 # -f flag causes there to be a slight fade time when switching workspaces
 exec --no-startup-id compton -f --config /home/bluenova/.config/compton.conf
@@ -296,5 +296,4 @@ bar {
 #### Set background using feh, in this case it is a random picture in the mentioned directory
 
 ####exec --no-startup-id feh --randomize --bg-fill ~/Pictures/Wallpapers/*
-
 
