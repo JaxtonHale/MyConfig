@@ -1,0 +1,3 @@
+
+
+sudo pacman -S redshift i3 neovim feh cmus rofi chromium lxappearance termite pulseaudio alsa-utils alsa-lib git scrot screenfetch arc-icon-theme weechat xclip
