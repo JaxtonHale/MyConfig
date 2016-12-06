@@ -1,5 +1,6 @@
 #Do this stuff and obviously, don't forget to copy over the config files from github
-#Also download San Francisco Display font and Inconsolata font. 
+#Also download San Francisco Display font and Inconsolata font. For inconsolata font just use the below pacman command and it will be installed.
+#For SFD font install to /usr/share/fonts
 
 sudo pacman -S redshift i3 emacs feh cmus rofi chromium lxappearance termite pulseaudio alsa-utils alsa-lib git scrot screenfetch arc-icon-theme weechat xclip xf86-video-ati ttf-inconsolata
 
