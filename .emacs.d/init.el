@@ -6,7 +6,15 @@
 (package-initialize)
 
 
-(defun line-numbers () (interactive) (linum-mode))
+#function that turns on line numbers but cant toggle them aka useless (defun line-numbers () (interactive) (linum-mode))
+
+#uncomment to disable backup files like "file.txt~" (which would be an emacs autobackup of file.txt):
+
+#(setq make-bakeup-files nil)
+
+
+
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
