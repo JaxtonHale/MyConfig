@@ -8,5 +8,14 @@
 alias ls='ls -a --color=auto'
 alias pac='sudo pacman'
 alias emnw='emacs -nw'
-alias lgrep='ls -a --color=auto | grep -i'
+
+installaur()
+{
+
+    tar -xvg $1
+    cd $1
+    makepkg -si
+    
+}
+
 PS1='[\u@\h \W]\$ '
