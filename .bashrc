@@ -8,6 +8,7 @@
 alias ls='ls -a --color=auto'
 alias pac='sudo pacman'
 alias emnw='emacs -nw'
+alias mypac='sudo pacman -Q | grep -i'
 
 installaur()
 {
