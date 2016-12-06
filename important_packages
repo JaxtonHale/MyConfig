@@ -1,7 +1,8 @@
+#Do this stuff and obviously, don't forget to copy over the config files from github
 
+sudo pacman -S redshift i3 emacs feh cmus rofi chromium lxappearance termite pulseaudio alsa-utils alsa-lib git scrot screenfetch arc-icon-theme weechat xclip xf86-video-ati
 
-sudo pacman -S redshift i3 emacs feh cmus rofi chromium lxappearance termite pulseaudio alsa-utils alsa-lib git scrot screenfetch arc-icon-theme weechat xclip
-
+#xf86-video-ati is the opensource amd driver
 
 ##Then: uncomment [Multilib] section in /etc/pacman.conf and...
 pacman -S steam
