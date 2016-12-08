@@ -15,7 +15,7 @@ alias dlmp3='youtube-dl --extract-audio --audio-format mp3 --audio-quality 190K'
 installaur()
 {
 
-    tar -xvg $1
+    tar xvfz $1
     cd $1
     makepkg -si
     
