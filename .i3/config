@@ -198,6 +198,8 @@ hide_edge_borders both
 
 
 
+#Automatically put steam in workspace 5
+assign [class="steam"] 5
 
 
 
@@ -224,16 +226,6 @@ Bindsym XF86AudioLowerVolume exec amixer sset Master 2%-
 #toggle volume mute
 Bindsym XF86AudioMute exec amixer sset Master toggle
 
-#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 -- +10% && #killall -SIGUSR1 i3status
-#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -- -10% && #killall -SIGUSR1 i3status
-
-#bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
-#bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -- -5%
-#bindsym XF86AudioMute exec ~/bin/toggle-mute
-#bindsym XF86AudioPlay exec clementine --play-pause
-#bindsym XF86AudioStop exec clementine --stop
-#bindsym XF86AudioPrev exec clementine --previous
-#bindsym XF86AudioNext exec clementine --next
 
 # -f flag causes there to be a slight fade time when switching workspaces
 exec --no-startup-id compton -f --config /home/sting/.config/compton.conf

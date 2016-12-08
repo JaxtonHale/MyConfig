@@ -1,13 +1,16 @@
 #Do this stuff and obviously, don't forget to copy over the config files from github
-#Also download San Francisco Display font and Inconsolata font. For inconsolata font just use the below pacman command and it will be installed.
+#Also download San Francisco Display font off of Github and Inconsolata font. For inconsolata font just use the below pacman command and it will be installed.
 #For SFD font install to /usr/share/fonts
 
-sudo pacman -S redshift i3 emacs feh cmus rofi chromium lxappearance termite pulseaudio alsa-utils alsa-lib git scrot screenfetch arc-icon-theme weechat xclip xf86-video-ati ttf-inconsolata
+sudo pacman -S redshift i3 emacs feh cmus rofi chromium lxappearance termite pulseaudio alsa-utils alsa-lib git scrot screenfetch arc-icon-theme weechat xclip xf86-video-ati ttf-inconsolata youtube-dl lm_sensors
 
 #xf86-video-ati is the opensource amd driver
 
 ##Then: uncomment [Multilib] section in /etc/pacman.conf and...
 pacman -S steam
+
+
+#Upon running the above pacman command, proceed to run sensors-detect in the terminal and say yes to practically everything. This is to display system temperatures. After the proper setup of sensors-detect you may run "sensors" in console to get computer temps.
 
 
 ##Custom setup for EMACS:
@@ -17,3 +20,4 @@ pacman -S steam
 #following that click the dropdown arrow for package archives and add ("ins") a new archive. Title it melpa make the url " https://melpa.org/packages/ "
 #Then click on state and save it for future sessions. Then, M-x package-install solarized-theme and M-x customize-themes and check the solarized option that you desire. Done!
 #Also of course make sure that you copy/clone the .emacs.d folder from github as it has init.el in it.
+
