@@ -22,13 +22,14 @@ mirrorsort()
 	y|Y) echo Overwriting mirrorlist...
 	     su
 	     rankmirrors -n 6 /etc/pacman.d/mirrorlist.sortbackup > /etc/pacman.d/mirrorlist
+	     sudo echo "#Overwritten by mirrorsort function, 'date'" >> /etc/pacman.d/mirrorlist
 	     exit;;
 	n|N) echo "NOT overwriting mirrorlist"
 	     sudo cp mirrorlist.sortbackup mirrorlist.ranked
 	     su
 	     rankmirrors -n 6 /etc/pacman.d/mirrorlist.sortbackup > mirrorlist.ranked
-	     exit
-	     echo "See mirrorlist.ranked file for ranked mirrorlist. Normal mirrorlist file not overwritten." ;;
+	     echo "See mirrorlist.ranked file for ranked mirrorlist. Normal mirrorlist file not overwritten."
+	     exit;;
     esac
     
 }
