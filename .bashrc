@@ -7,9 +7,14 @@
 
 alias ls='ls -a --color=auto'
 alias pac='sudo pacman'
+alias apac='pacaur'
+alias sapac='sudo pacaur' 
 alias emnw='emacs -nw'
 alias mypac='sudo pacman -Q | grep -i'
+alias amypac='sudo pacaur -Q | grep -i'
 alias dlmp3='youtube-dl --extract-audio --audio-format mp3 --audio-quality 190K'
+alias aim='cd ~/projects/AimTux/ && git pull && cmake . && make && ./load'
+
 
 mirrorsort()
 {
@@ -17,9 +22,9 @@ mirrorsort()
     sudo cp $1 mirrorlist.sortbackup
     sudo sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.sortbackup
     echo "Do you want to overwrite the currently in use mirrorlist file? [y,n]"
-    read -p -n1 yn
+    read -n1p "yn"
     case $yn in
-	y|Y) echo Overwriting mirrorlist...
+	y|Y) echo "Overwriting mirrorlist..."
 	     su
 	     rankmirrors -n 6 /etc/pacman.d/mirrorlist.sortbackup > /etc/pacman.d/mirrorlist
 	     sudo echo "#Overwritten by mirrorsort function, 'date'" >> /etc/pacman.d/mirrorlist
@@ -39,7 +44,7 @@ installaur()
 
     tar xvfz $1
     cd $1
-    makepkg -si
+    makepkg -sir
     
 }
 

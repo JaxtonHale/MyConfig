@@ -1,6 +1,3 @@
-##### MAKE SURE YOU USE A MONOSPACE FONT OR ELSE CHARACTERS WILL OVERLAP!! Ubuntu Mono works fine...
-
-
 [options]
 scroll_on_output = false
 scroll_on_keystroke = true
@@ -10,7 +7,7 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = Monospace 11
+font = Ubuntu Mono 13
 scrollback_lines = 10000
 search_wrap = true
 #icon_name = terminal
@@ -28,7 +25,7 @@ cursor_shape = block
 # set size hints for the window
 #size_hints = false
 
-# Hide links that are no longer valid in url select overlay mode
+# Hide links that are no longecr valid in url select overlay mode
 filter_unmatched_urls = true
 
 # emit escape sequences for extra modified keys
