@@ -211,6 +211,13 @@ exec --no-startup-id feh --randomize --bg-fill ~/pictures/wallpapers/*
 
 bindsym --release Print exec scrot -e 'mv $f ~/screenshots/'
 bindsym --release End exec emacs
+
+##Cmus global hotkeys
+bindsym --release Home exec cmus-remote -p
+bindsym --release KP_RIGHT exec cmus-remote -r
+bindsym --release KP_LEFT exec cmus-remote -n
+bindsym --release KP_BEGIN exec cmus-remote -u
+
 exec --no-startup-id pulseaudio
 
 
