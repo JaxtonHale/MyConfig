@@ -199,7 +199,7 @@ hide_edge_borders both
 
 
 #Automatically put steam in workspace 5
-assign [class="steam"] 5
+assign [class="Steam"] 5
 
 
 
@@ -214,9 +214,9 @@ bindsym --release End exec emacs
 
 ##Cmus global hotkeys
 bindsym --release Home exec cmus-remote -p
-bindsym --release KP_RIGHT exec cmus-remote -C player-prev
-bindsym --release KP_LEFT exec cmus-remote -C player-next
-bindsym --release KP_BEGIN exec cmus-remote -u
+bindsym --release KP_Right exec cmus-remote -C "player-prev"
+bindsym --release KP_Left exec cmus-remote -C "player-next"
+bindsym --release KP_Begin exec cmus-remote -u
 
 exec --no-startup-id pulseaudio
 
