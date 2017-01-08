@@ -33,7 +33,7 @@
       "AutoWall" : {
          "bones" : [ true, false, false, false, false, false ],
          "enabled" : true,
-         "value" : 10.766000747680664
+         "value" : 7.9900002479553223
       },
       "ErrorMargin" : {
          "enabled" : false,
@@ -111,9 +111,9 @@
    "ClanTagChanger" : {
       "animation" : false,
       "animation_speed" : 234,
-      "enabled" : false,
+      "enabled" : true,
       "type" : 0,
-      "value" : ""
+      "value" : "CraZed Toast"
    },
    "Dlights" : {
       "enabled" : false,

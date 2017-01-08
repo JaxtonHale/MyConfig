@@ -15,7 +15,7 @@ alias amypac='sudo pacaur -Q | grep -i'
 alias dlmp3='youtube-dl --extract-audio --audio-format mp3 --audio-quality 190K'
 alias aim='cd ~/projects/AimTux/ && git pull && cmake . && make -j 4 && ./load'
 alias micspamsink='pactl load-module module-remap-sink sink_name=secondary master=alsa_output.pci-0000_00_14.2.analog-stereo'
-
+alias cdconfig='cd ~/projects/MyConfig'
 untar()
 {
     tar -xvf $1
