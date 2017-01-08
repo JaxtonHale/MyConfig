@@ -12,6 +12,8 @@ cp ~/.emacs.d/init.el .emacs.d/init.el
 echo "Copied emacs init.el to MyConfig"
 cp ~/.i3/config .i3/config
 echo "Copied i3 config to MyConfig"
+cp -r ~/.config/AimTux ./.config/AimTux
+echo "Copied AimTux configs to MyConfig"
 cp ~/.config/termite/config .config/termite/config
 cp ~/.config/compton.conf .config/compton.conf
 echo "Copied compton.conf and termite config to MyConfig"

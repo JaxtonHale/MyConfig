@@ -214,8 +214,8 @@ bindsym --release End exec emacs
 
 ##Cmus global hotkeys
 bindsym --release Home exec cmus-remote -p
-bindsym --release KP_RIGHT exec cmus-remote -r
-bindsym --release KP_LEFT exec cmus-remote -n
+bindsym --release KP_RIGHT exec cmus-remote -C player-prev
+bindsym --release KP_LEFT exec cmus-remote -C player-next
 bindsym --release KP_BEGIN exec cmus-remote -u
 
 exec --no-startup-id pulseaudio
