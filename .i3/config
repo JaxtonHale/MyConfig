@@ -198,8 +198,9 @@ hide_edge_borders both
 
 
 
-#Automatically put steam in workspace 5
+#Automatically put applications in workspaces in workspace 5
 assign [class="Steam"] 5
+assign [class="Chromium" ] 1
 
 
 
