@@ -17,6 +17,8 @@ echo "Copied AimTux configs to MyConfig"
 cp ~/.config/termite/config .config/termite/config
 cp ~/.config/compton.conf .config/compton.conf
 echo "Copied compton.conf and termite config to MyConfig"
+cp ~/.config/redshift.conf .config/redshift.conf
+echo "Copied redshift config to MyConfig"
 git add .
 git status
 
