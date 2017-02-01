@@ -56,7 +56,8 @@
             },
             "RCS" : {
                "AlwaysOn" : true,
-               "Amount" : 2,
+               "AmountX" : 2,
+               "AmountY" : 2,
                "Enabled" : true
             },
             "Silent" : true,
@@ -114,7 +115,8 @@
             },
             "RCS" : {
                "AlwaysOn" : true,
-               "Amount" : 2,
+               "AmountX" : 2,
+               "AmountY" : 2,
                "Enabled" : true
             },
             "Silent" : true,
@@ -172,7 +174,8 @@
             },
             "RCS" : {
                "AlwaysOn" : false,
-               "Amount" : 2,
+               "AmountX" : 0,
+               "AmountY" : 0,
                "Enabled" : false
             },
             "Silent" : false,
@@ -230,7 +233,8 @@
             },
             "RCS" : {
                "AlwaysOn" : true,
-               "Amount" : 2,
+               "AmountX" : 0,
+               "AmountY" : 0,
                "Enabled" : true
             },
             "Silent" : false,
@@ -288,7 +292,8 @@
             },
             "RCS" : {
                "AlwaysOn" : true,
-               "Amount" : 2,
+               "AmountX" : 0,
+               "AmountY" : 0,
                "Enabled" : true
             },
             "Silent" : false,
@@ -434,9 +439,9 @@
          "hostages" : false,
          "legit" : false,
          "smoke_check" : false,
-         "throwables" : false,
+         "throwables" : true,
          "visibility_check" : true,
-         "weapons" : false
+         "weapons" : true
       },
       "Glow" : {
          "ally_color" : {
