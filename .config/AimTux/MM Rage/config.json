@@ -79,7 +79,7 @@
             "AimKeyOnly" : false,
             "AimStep" : {
                "Amount" : 26.730001449584961,
-               "Enabled" : true
+               "Enabled" : false
             },
             "AutoAim" : {
                "Enabled" : true,
@@ -319,14 +319,14 @@
       },
       "HeadEdge" : {
          "distance" : 30.000001907348633,
-         "enabled" : false
+         "enabled" : true
       },
       "Pitch" : {
-         "enabled" : false,
+         "enabled" : true,
          "type" : 1
       },
       "Yaw" : {
-         "enabled" : false,
+         "enabled" : true,
          "type" : 6,
          "type_fake" : 1
       }
@@ -343,7 +343,7 @@
       "type" : 4
    },
    "Autoblock" : {
-      "enabled" : false,
+      "enabled" : true,
       "key" : 7
    },
    "BHop" : {
@@ -1142,9 +1142,9 @@
       },
       "mainColor" : {
          "a" : 0.87437188625335693,
-         "b" : 0.51758790016174316,
-         "g" : 0.41768929362297058,
-         "r" : 0.0078028370626270771
+         "b" : 0.53768843412399292,
+         "g" : 0.20534834265708923,
+         "r" : 0.31889933347702026
       }
    },
    "View" : {
