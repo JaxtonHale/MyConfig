@@ -219,7 +219,7 @@ bindsym --release KP_Right exec cmus-remote -C "player-prev"
 bindsym --release KP_Left exec cmus-remote -C "player-next"
 bindsym --release KP_Begin exec cmus-remote -u
 
-exec --no-startup-id pulseaudio
+##exec --no-startup-id pulseaudio
 
 
 #The below uncommented volume controls actually work, unlike the commented ones

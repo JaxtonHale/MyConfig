@@ -28,7 +28,7 @@ mirrorsort()
     sudo cp $1 mirrorlist.sortbackup
     sudo sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.sortbackup
     echo "Do you want to overwrite the currently in use mirrorlist file? [y,n]"
-    read -n1p "yn"
+    read -n 1 "yn"
     case $yn in
 	y|Y) echo "Overwriting mirrorlist..."
 	     su
