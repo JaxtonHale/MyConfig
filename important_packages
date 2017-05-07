@@ -2,7 +2,8 @@
 #Also download San Francisco Display font off of Github and Inconsolata font. For inconsolata font just use the below pacman command and it will be installed.
 #For SFD font install to /usr/share/fonts
 
-sudo pacman -S redshift i3 emacs feh cmus rofi chromium lxappearance termite pulseaudio alsa-utils alsa-lib git scrot screenfetch arc-icon-theme weechat xclip xf86-video-ati ttf-inconsolata youtube-dl lm_sensors
+sudo pacman -S redshift i3 emacs feh cmus rofi chromium lxappearance termite pulseaudio alsa-utils alsa-lib git scrot screenfetch arc-icon-theme weechat xclip xf86-video-ati ttf-inconsolata youtube-dl 
+lm_sensors ntfs-3g
 
 #xf86-video-ati is the opensource amd driver
 
