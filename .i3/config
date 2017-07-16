@@ -208,9 +208,9 @@ assign [class="Chromium" ] 1
 
 #### Set background using feh, in this case it is a random picture in the mentioned directory
 
-exec --no-startup-id feh --randomize --bg-fill ~/pictures/wallpapers/*
+exec --no-startup-id feh --randomize --bg-fill /shared_media/pictures/wallpapers/*
 
-bindsym --release Print exec scrot -e 'mv $f ~/pictures/screenshots/'
+bindsym --release Print exec scrot -e 'mv $f /shared_media/pictures/screenshots/'
 bindsym --release End exec emacs
 
 ##Cmus global hotkeys
