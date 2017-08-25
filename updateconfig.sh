@@ -19,6 +19,11 @@ cp ~/.config/compton.conf .config/compton.conf
 echo "Copied compton.conf and termite config to MyConfig"
 cp ~/.config/redshift.conf .config/redshift.conf
 echo "Copied redshift config to MyConfig"
+cp ~/.aliases .aliases
+echo "Copied aliases file to MyConfig"
+cp ~/.zshrc .zshrc
+echo "Copied zsh config to MyConfig"
+
 git add -u .
 git status
 

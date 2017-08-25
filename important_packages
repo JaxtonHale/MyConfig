@@ -3,7 +3,7 @@
 #For SFD font install to /usr/share/fonts
 
 sudo pacman -S redshift i3 emacs feh cmus rofi chromium lxappearance termite pulseaudio alsa-utils alsa-lib git scrot screenfetch arc-icon-theme weechat xclip xf86-video-ati ttf-inconsolata youtube-dl 
-lm_sensors ntfs-3g
+lm_sensors ntfs-3g zsh
 
 #xf86-video-ati is the opensource amd driver
 
@@ -22,3 +22,4 @@ pacman -S steam
 #Then click on state and save it for future sessions. Then, M-x package-install solarized-theme and M-x customize-themes and check the solarized option that you desire. Done!
 #Also of course make sure that you copy/clone the .emacs.d folder from github as it has init.el in it.
 
+#Set up zsh: run the setupzsh.sh script.
