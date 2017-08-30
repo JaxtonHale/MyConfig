@@ -5,6 +5,7 @@ alias rmautosaves='find . -name "*~" -delete'
 alias apac='pacaur'
 alias sapac='sudo pacaur' 
 alias emnw='emacs -nw'
+alias emc='emacsclient -c -nw'
 alias mypac='sudo pacman -Q | grep -i'
 alias amypac='sudo pacaur -Q | grep -i'
 alias dlmp3='youtube-dl --extract-audio --audio-format mp3 --audio-quality 190K'
@@ -49,3 +50,7 @@ installaur()
     makepkg -sir
     
 }
+
+VISUAL="emacsclient -c -nw"
+EDITOR="$VISUAL"
+TERM="xterm-256color"
