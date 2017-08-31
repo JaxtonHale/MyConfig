@@ -53,4 +53,5 @@ installaur()
 
 VISUAL="emacsclient -c -nw"
 EDITOR="$VISUAL"
+export ALTERNATE_EDITOR=""
 TERM="xterm-256color"

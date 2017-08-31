@@ -202,9 +202,8 @@ hide_edge_borders both
 assign [class="Steam"] 5
 assign [class="Chromium" ] 1
 
-
-
-
+##EMACS DAEMON (use emacsclient)
+exec --no-startup-id emacs --daemon
 
 #### Set background using feh, in this case it is a random picture in the mentioned directory
 
