@@ -15,7 +15,7 @@ fi
 #automatically load theme:
 autoload -Uz promptinit
 promptinit
-prompt fire
+prompt nicoulaj
 
 #load aliases:
 source $HOME/.aliases
