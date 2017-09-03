@@ -53,7 +53,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (company-irony flycheck-irony irony solarized-theme oauth2 moe-theme)))
+    (powerline company-irony flycheck-irony irony solarized-theme oauth2 moe-theme)))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
@@ -102,26 +102,26 @@
 ;;;;;;;;;uncomment to disable backup files like "file.txt~" (which would be an emacs autobackup of file.txt):
 (setq make-backup-files nil)
 (cua-mode)
-(setq c-default-style "linux"
-      c-basic-offset 4)
-(require 'moe-theme)
-(moe-dark)
 ;;Integrates emacs copypasting with system copypaste
 (setq x-select-enable-clipboard t)
 (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 
-
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
-
 (eval-after-load 'flycheck
 '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
-
 (eval-after-load 'company
   '(add-to-list 'company-backends 'company-irony))
 
 ;;Setup my pseudo-IDE environment for c-related files
-(defun setup-c-environment () (interactive) (company-mode) (linum-mode) (flycheck-mode) (irony-mode))
+(defun setup-c-environment () (interactive) (company-mode) (linum-mode) (flycheck-mode) (irony-mode) (setq c-default-style "linux" c-basic-offset 4))
 (add-hook 'c++-mode-hook 'setup-c-environment)
 (add-hook 'c-mode-hook 'setup-c-environment)
 (add-hook 'objc-mode-hook 'setup-c-environment)
 (setq company-idle-delay 0)
+
+(require 'moe-theme)
+(moe-dark)
+(require 'powerline)
+(powerline-moe-theme)
+(tool-bar-mode -1)
+(toggle-scroll-bar 0)
