@@ -13,7 +13,10 @@
       c-basic-offset 4)
 (require 'moe-theme)
 (moe-dark)
-
+(global-linum-mode 1)
+;;Integrates emacs copypasting with system copypaste
+(setq x-select-enable-clipboard t)
+(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 
 
 
