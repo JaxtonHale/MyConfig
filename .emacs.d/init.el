@@ -3,6 +3,7 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
+(require 'package)
 (package-initialize)
 
 (custom-set-variables
@@ -10,6 +11,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["#073642" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#657b83"])
  '(compilation-message-face (quote default))
  '(cua-global-mark-cursor-color "#2aa198")
  '(cua-normal-cursor-color "#657b83")
@@ -18,7 +21,7 @@
  '(custom-enabled-themes (quote (moe-dark)))
  '(custom-safe-themes
    (quote
-    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "4cbec5d41c8ca9742e7c31cc13d8d4d5a18bd3a0961c18eb56d69972bbcf3071" "b9cbfb43711effa2e0a7fbc99d5e7522d8d8c1c151a3194a4b176ec17c9a8215" "6952b5d43bbd4f1c6727ff61bc9bf5677d385e101433b78ada9c3f0e3787af06" default)))
+    ("cd9604afb1d6a016ccbcc45c4a2abcd0c5680fd3a761459116f8b0516c21f345" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "4cbec5d41c8ca9742e7c31cc13d8d4d5a18bd3a0961c18eb56d69972bbcf3071" "b9cbfb43711effa2e0a7fbc99d5e7522d8d8c1c151a3194a4b176ec17c9a8215" "6952b5d43bbd4f1c6727ff61bc9bf5677d385e101433b78ada9c3f0e3787af06" default)))
  '(fci-rule-color "#eee8d5")
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
@@ -53,7 +56,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (powerline company-irony flycheck-irony irony solarized-theme oauth2 moe-theme)))
+    (evil powerline company-irony flycheck-irony irony solarized-theme oauth2 moe-theme)))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
@@ -89,13 +92,6 @@
    ["#eee8d5" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#073642"])
  '(xterm-color-names-bright
    ["#fdf6e3" "#cb4b16" "#93a1a1" "#839496" "#657b83" "#6c71c4" "#586e75" "#002b36"]))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
 
 
 ;;;;;function that turns on line numbers but cant toggle them aka useless: (defun line-numbers () (interactive) (linum-mode))
@@ -113,15 +109,49 @@
   '(add-to-list 'company-backends 'company-irony))
 
 ;;Setup my pseudo-IDE environment for c-related files
-(defun setup-c-environment () (interactive) (company-mode) (linum-mode) (flycheck-mode) (irony-mode) (setq c-default-style "linux" c-basic-offset 4))
+(defun setup-c-environment () (interactive) (company-mode) (linum-mode) (flycheck-mode) (irony-mode)
+       (setq c-default-style "linux" c-basic-offset 4))
 (add-hook 'c++-mode-hook 'setup-c-environment)
 (add-hook 'c-mode-hook 'setup-c-environment)
 (add-hook 'objc-mode-hook 'setup-c-environment)
 (setq company-idle-delay 0)
+(setq flycheck-idle-change-delay 1.5)
 
+;;some random aesthetic stuff i decided to put in
 (require 'moe-theme)
 (moe-dark)
 (require 'powerline)
-(powerline-moe-theme)
+(powerline-default-theme)
+;(powerline-moe-theme)
 (tool-bar-mode -1)
-(toggle-scroll-bar 0)
+(scroll-bar-mode -1)
+(fringe-mode 0)
+
+;vi emulation
+(require 'evil)
+(evil-mode 1)
+
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "PfEd" :family "DejaVu Sans Mono for Powerline"))))
+ '(flycheck-error ((t (:underline (:color "#dd0000" :style wave) :weight bold))))
+ '(flycheck-warnline ((t (:underline (:color "#ff8700")))))
+ '(mode-line-buffer-id ((t (:foreground "#080808" :box nil :weight bold))))
+ '(mode-line-inactive ((t (:background "#2aa198" :foreground "#23221F"))))
+ '(powerline-inactive1 ((t (:inherit mode-line :background "grey11"))))
+ '(powerline-inactive2 ((t (:inherit mode-line :background "grey20")))))
+ 
+ ;Solarized powerline colors
+(setq powerline-color1 "#073642")
+(setq powerline-color2 "#002b36")
+
+(set-face-attribute 'mode-line nil
+                     :foreground "#fdf6e3"
+                     :background "#2aa198"
+                    :box nil :inverse-video nil)
+(set-face-attribute 'mode-line-inactive nil
+                     :box nil :inverse-video nil)

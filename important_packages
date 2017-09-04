@@ -1,6 +1,8 @@
 #Do this stuff and obviously, don't forget to copy over the config files from github
 #Also download San Francisco Display font off of Github and Inconsolata font. For inconsolata font just use the below pacman command and it will be installed.
 #For SFD font install to /usr/share/fonts
+#Make sure to get fonts off of https://github.com/powerline/fonts/tree/master/DejaVuSansMono
+#And put them in /usr/share/fonts. This is so powerline properly displays in emacs -nw. Also make sure that this font is in use by emacs--it should be though, because my emacs config uses the powerline version of the font.
 
 sudo pacman -S redshift i3 emacs feh cmus rofi chromium lxappearance termite pulseaudio alsa-utils alsa-lib git scrot screenfetch arc-icon-theme weechat xclip xf86-video-ati ttf-inconsolata youtube-dl 
 lm_sensors ntfs-3g zsh
