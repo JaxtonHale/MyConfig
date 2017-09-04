@@ -7,7 +7,7 @@
 ;;;;;Auto-install Packages:
 ; list the packages you want
 (setq package-list '(evil powerline company-irony flycheck-irony
-			  irony solarized-theme moe-theme))
+			  irony solarized-theme moe-theme key-chord))
 
 ; list the repositories containing them
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
@@ -63,8 +63,22 @@
 ;vi emulation
 (require 'evil)
 (evil-mode 1)
+(require 'key-chord)
+(key-chord-mode 1)
+(key-chord-define evil-insert-state-map  "jk" 'evil-normal-state)
 
+;fully load the themes and stuff in daemon mode -- before, they weren't getting fully loaded
+;(defun load-material-theme (frame)
+;  (select-frame frame)
+;(set-face-attribute 'mode-line-buffer-id nil :foreground "black" :weight bold))
 
+;(if (daemonp)
+;    (add-hook 'after-make-frame-functions #'load-material-theme))
+;  (load-theme 'moe-dark t))
+;(set-face-attribute 'mode-line nil
+ ;                    :foreground "#fdf6e3"
+  ;                   :background "#2aa198"
+   ;                 :box nil :inverse-video nil)
 
 
 (custom-set-variables
@@ -117,7 +131,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (evil powerline company-irony flycheck-irony irony solarized-theme oauth2 moe-theme)))
+    (key-chord evil powerline company-irony flycheck-irony irony solarized-theme oauth2 moe-theme)))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
@@ -158,11 +172,11 @@
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
+ ;; If there is more than one, they won't work right.  ;113
  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "PfEd" :family "DejaVu Sans Mono for Powerline"))))
  '(flycheck-error ((t (:underline (:color "#dd0000" :style wave) :weight bold))))
  '(flycheck-warnline ((t (:underline (:color "#ff8700")))))
- '(mode-line-buffer-id ((t (:foreground "#080808" :box nil :weight bold))))
+ '(mode-line-buffer-id ((t (:foreground "black" :weight bold))))
  '(mode-line-inactive ((t (:background "#2aa198" :foreground "#23221F"))))
  '(powerline-inactive1 ((t (:inherit mode-line :background "grey11"))))
  '(powerline-inactive2 ((t (:inherit mode-line :background "grey20")))))
@@ -174,6 +188,8 @@
 (set-face-attribute 'mode-line nil
                      :foreground "#fdf6e3"
                      :background "#2aa198"
-                    :box nil :inverse-video nil)
-(set-face-attribute 'mode-line-inactive nil
-                     :box nil :inverse-video nil)
+		     :box nil :inverse-video nil)
+
+(set-face-attribute 'mode-line-buffer-id nil :background "#2aa198" :foreground "white" :weight 'bold)
+;(set-face-attribute 'mode-line-inactive nil
+;                     :box nil :inverse-video nil)
