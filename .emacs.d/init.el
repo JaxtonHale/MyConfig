@@ -3,8 +3,69 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-(require 'package)
+
+;;;;;Auto-install Packages:
+; list the packages you want
+(setq package-list '(evil powerline company-irony flycheck-irony
+			  irony solarized-theme moe-theme))
+
+; list the repositories containing them
+(setq package-archives '(("elpa" . "http://tromey.com/elpa/")
+                         ("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")))
+
+; activate all the packages (in particular autoloads)
 (package-initialize)
+
+; fetch the list of packages available 
+(unless package-archive-contents
+  (package-refresh-contents))
+
+; install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
+;;;;;function that turns on line numbers but cant toggle them aka useless: (defun line-numbers () (interactive) (linum-mode))
+;;;;;;;;;uncomment to disable backup files like "file.txt~" (which would be an emacs autobackup of file.txt):
+
+(setq make-backup-files nil)
+(cua-mode)
+;;Integrates emacs copypasting with system copypaste
+(setq x-select-enable-clipboard t)
+(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+(eval-after-load 'flycheck
+'(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
+(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-irony))
+
+;;Setup my pseudo-IDE environment for c-related files
+(defun setup-c-environment () (interactive) (company-mode) (linum-mode) (flycheck-mode) (irony-mode)
+       (setq c-default-style "linux" c-basic-offset 4))
+(add-hook 'c++-mode-hook 'setup-c-environment)
+(add-hook 'c-mode-hook 'setup-c-environment)
+(add-hook 'objc-mode-hook 'setup-c-environment)
+(setq company-idle-delay 0)
+(setq flycheck-idle-change-delay 1.5)
+
+;;some random aesthetic stuff i decided to put in
+(require 'moe-theme)
+(moe-dark)
+(require 'powerline)
+(powerline-default-theme)
+;(powerline-moe-theme)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(fringe-mode 0)
+
+;vi emulation
+(require 'evil)
+(evil-mode 1)
+
+
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -92,45 +153,6 @@
    ["#eee8d5" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#073642"])
  '(xterm-color-names-bright
    ["#fdf6e3" "#cb4b16" "#93a1a1" "#839496" "#657b83" "#6c71c4" "#586e75" "#002b36"]))
-
-
-;;;;;function that turns on line numbers but cant toggle them aka useless: (defun line-numbers () (interactive) (linum-mode))
-;;;;;;;;;uncomment to disable backup files like "file.txt~" (which would be an emacs autobackup of file.txt):
-(setq make-backup-files nil)
-(cua-mode)
-;;Integrates emacs copypasting with system copypaste
-(setq x-select-enable-clipboard t)
-(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
-
-(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
-(eval-after-load 'flycheck
-'(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
-(eval-after-load 'company
-  '(add-to-list 'company-backends 'company-irony))
-
-;;Setup my pseudo-IDE environment for c-related files
-(defun setup-c-environment () (interactive) (company-mode) (linum-mode) (flycheck-mode) (irony-mode)
-       (setq c-default-style "linux" c-basic-offset 4))
-(add-hook 'c++-mode-hook 'setup-c-environment)
-(add-hook 'c-mode-hook 'setup-c-environment)
-(add-hook 'objc-mode-hook 'setup-c-environment)
-(setq company-idle-delay 0)
-(setq flycheck-idle-change-delay 1.5)
-
-;;some random aesthetic stuff i decided to put in
-(require 'moe-theme)
-(moe-dark)
-(require 'powerline)
-(powerline-default-theme)
-;(powerline-moe-theme)
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
-(fringe-mode 0)
-
-;vi emulation
-(require 'evil)
-(evil-mode 1)
-
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
