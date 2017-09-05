@@ -4,8 +4,7 @@
 #Make sure to get fonts off of https://github.com/powerline/fonts/tree/master/DejaVuSansMono
 #And put them in /usr/share/fonts. This is so powerline properly displays in emacs -nw. Also make sure that this font is in use by emacs--it should be though, because my emacs config uses the powerline version of the font.
 
-sudo pacman -S redshift i3 emacs feh cmus rofi chromium lxappearance termite pulseaudio alsa-utils alsa-lib git scrot screenfetch arc-icon-theme weechat xclip xf86-video-ati ttf-inconsolata youtube-dl 
-lm_sensors ntfs-3g zsh
+sudo pacman -S redshift i3 emacs feh rofi chromium lxappearance termite pulseaudio alsa-utils alsa-lib git scrot screenfetch arc-icon-theme weechat xclip xf86-video-ati ttf-inconsolata youtube-dl lm_sensors ntfs-3g zsh mpc mpd ncmpcpp
 
 #xf86-video-ati is the opensource amd driver
 

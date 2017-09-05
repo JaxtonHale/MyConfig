@@ -1,4 +1,3 @@
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -12,7 +11,7 @@
 ; list the repositories containing them
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
                          ("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")))
+			 ("melpa" . "http://melpa.org/packages/")))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
@@ -27,8 +26,8 @@
     (package-install package)))
 
 ;;;;;function that turns on line numbers but cant toggle them aka useless: (defun line-numbers () (interactive) (linum-mode))
-;;;;;;;;;uncomment to disable backup files like "file.txt~" (which would be an emacs autobackup of file.txt):
 
+;disable backup ("file.type~") files
 (setq make-backup-files nil)
 (cua-mode)
 ;;Integrates emacs copypasting with system copypaste
@@ -52,10 +51,9 @@
 
 ;;some random aesthetic stuff i decided to put in
 (require 'moe-theme)
-(moe-dark)
+(moe-light)
 (require 'powerline)
 (powerline-default-theme)
-;(powerline-moe-theme)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (fringe-mode 0)
@@ -66,20 +64,6 @@
 (require 'key-chord)
 (key-chord-mode 1)
 (key-chord-define evil-insert-state-map  "jk" 'evil-normal-state)
-
-;fully load the themes and stuff in daemon mode -- before, they weren't getting fully loaded
-;(defun load-material-theme (frame)
-;  (select-frame frame)
-;(set-face-attribute 'mode-line-buffer-id nil :foreground "black" :weight bold))
-
-;(if (daemonp)
-;    (add-hook 'after-make-frame-functions #'load-material-theme))
-;  (load-theme 'moe-dark t))
-;(set-face-attribute 'mode-line nil
- ;                    :foreground "#fdf6e3"
-  ;                   :background "#2aa198"
-   ;                 :box nil :inverse-video nil)
-
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -93,7 +77,7 @@
  '(cua-normal-cursor-color "#657b83")
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
- '(custom-enabled-themes (quote (moe-dark)))
+ '(custom-enabled-themes (quote (moe-light)))
  '(custom-safe-themes
    (quote
     ("29de2d95284b6ab6e1f5e8ebfc0039f2aeea9d6a7589196f7176cd575892e528" "cd9604afb1d6a016ccbcc45c4a2abcd0c5680fd3a761459116f8b0516c21f345" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "4cbec5d41c8ca9742e7c31cc13d8d4d5a18bd3a0961c18eb56d69972bbcf3071" "b9cbfb43711effa2e0a7fbc99d5e7522d8d8c1c151a3194a4b176ec17c9a8215" "6952b5d43bbd4f1c6727ff61bc9bf5677d385e101433b78ada9c3f0e3787af06" default)))
