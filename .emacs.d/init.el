@@ -51,7 +51,7 @@
 
 ;;some random aesthetic stuff i decided to put in
 (require 'moe-theme)
-(moe-light)
+(moe-dark)
 (require 'powerline)
 (powerline-default-theme)
 (tool-bar-mode -1)
@@ -153,6 +153,7 @@
    ["#fdf6e3" "#cb4b16" "#93a1a1" "#839496" "#657b83" "#6c71c4" "#586e75" "#002b36"]))
 
 
+(moe-dark)
 (set-face-attribute 'mode-line-buffer-id nil :background "#2aa198" :weight 'extra-bold)
 
 (custom-set-faces
@@ -180,3 +181,4 @@
 ;(set-face-attribute 'mode-line-buffer-id nil :background "#2aa198" :weight 'extra-bold)
 ;(set-face-attribute 'mode-line-inactive nil
 ;                     :box nil :inverse-video nil)
+

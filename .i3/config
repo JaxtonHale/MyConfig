@@ -213,10 +213,10 @@ bindsym --release Print exec scrot -e 'mv $f /shared_media/pictures/screenshots/
 bindsym --release End exec "emacsclient -c"
 
 ##Cmus global hotkeys
-bindsym --release Home exec cmus-remote -p
-bindsym --release KP_Right exec cmus-remote -C "player-next"
-bindsym --release KP_Left exec cmus-remote -C "player-prev"
-bindsym --release KP_Begin exec cmus-remote -u
+bindsym --release Home exec "mpc stop" 
+bindsym --release KP_Right exec "mpc next"
+bindsym --release KP_Left exec "mpc prev" 
+bindsym --release KP_Begin exec "mpc toggle"
 
 ##exec --no-startup-id pulseaudio
 
