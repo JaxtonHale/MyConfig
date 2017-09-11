@@ -23,6 +23,10 @@ cp ~/.aliases .aliases
 echo "Copied aliases file to MyConfig"
 cp ~/.zshrc .zshrc
 echo "Copied zsh config to MyConfig"
+cp ~/.config/mpd/mpd.conf .config/mpd/mpd.conf
+echo "Copied mpd config to MyConfig"
+cp ~/.ncmpcpp/config .ncmpcpp/config
+echo "Copied ncmpcpp config to MyConfig"
 
 git add -u .
 git status
