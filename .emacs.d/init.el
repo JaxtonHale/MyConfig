@@ -42,7 +42,7 @@
 
 ;;Setup my pseudo-IDE environment for c-related files
 (defun setup-c-environment () (interactive) (company-mode) (linum-mode) (flycheck-mode) (irony-mode)
-       (setq c-default-style "linux" c-basic-offset 4))
+       (setq c-default-style "linux" c-basic-offset 2))
 (add-hook 'c++-mode-hook 'setup-c-environment)
 (add-hook 'c-mode-hook 'setup-c-environment)
 (add-hook 'objc-mode-hook 'setup-c-environment)
@@ -77,7 +77,7 @@
  '(cua-normal-cursor-color "#657b83")
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
- '(custom-enabled-themes (quote (moe-light)))
+ '(custom-enabled-themes (quote (moe-dark)))
  '(custom-safe-themes
    (quote
     ("29de2d95284b6ab6e1f5e8ebfc0039f2aeea9d6a7589196f7176cd575892e528" "cd9604afb1d6a016ccbcc45c4a2abcd0c5680fd3a761459116f8b0516c21f345" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "4cbec5d41c8ca9742e7c31cc13d8d4d5a18bd3a0961c18eb56d69972bbcf3071" "b9cbfb43711effa2e0a7fbc99d5e7522d8d8c1c151a3194a4b176ec17c9a8215" "6952b5d43bbd4f1c6727ff61bc9bf5677d385e101433b78ada9c3f0e3787af06" default)))
@@ -153,7 +153,7 @@
    ["#fdf6e3" "#cb4b16" "#93a1a1" "#839496" "#657b83" "#6c71c4" "#586e75" "#002b36"]))
 
 
-(moe-light)
+;;(moe-light)
 (set-face-attribute 'mode-line-buffer-id nil :background "#2aa198" :weight 'extra-bold)
 
 (custom-set-faces
