@@ -115,7 +115,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (key-chord evil powerline company-irony flycheck-irony irony solarized-theme oauth2 moe-theme)))
+    (evil-tutor key-chord evil powerline company-irony flycheck-irony irony solarized-theme oauth2 moe-theme)))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
