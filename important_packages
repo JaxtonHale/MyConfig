@@ -23,4 +23,6 @@ pacman -S steam
 #Then click on state and save it for future sessions. Then, M-x package-install solarized-theme and M-x customize-themes and check the solarized option that you desire. Done!
 #Also of course make sure that you copy/clone the .emacs.d folder from github as it has init.el in it.
 
-#Set up zsh: run the setupzsh.sh script.
+#Set up zsh: run the setupzsh.sh script
+
+#Set up pacaur: install from https://aur.archlinux.org/packages/pacaur/
