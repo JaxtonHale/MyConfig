@@ -41,8 +41,9 @@
   '(add-to-list 'company-backends 'company-irony))
 
 ;;Setup my pseudo-IDE environment for c-related files
-(defun setup-c-environment () (interactive) (company-mode) (linum-mode) (flycheck-mode) (irony-mode)
-       (setq c-default-style "linux" c-basic-offset 2))
+(defun setup-c-environment () (interactive) (company-mode) (linum-mode) (flycheck-mode) (irony-mode))
+(setq c-default-style "bsd" c-basic-offset 2)
+       
 (add-hook 'c++-mode-hook 'setup-c-environment)
 (add-hook 'c-mode-hook 'setup-c-environment)
 (add-hook 'objc-mode-hook 'setup-c-environment)
