@@ -52,6 +52,16 @@ installaur()
     
 }
 
+setbg()
+{
+    WALLPAPER_DIR="/shared_media/pictures/wallpapers"
+    cd WALLPAPER_DIR
+    TMP_FILE=`mktemp -p .`
+    
+    wget $1 -O $TMP_FILE
+    feh --bg-fill $TMP_FILE
+}
+
 VISUAL="emacsclient -c -nw"
 EDITOR="$VISUAL"
 export ALTERNATE_EDITOR=""

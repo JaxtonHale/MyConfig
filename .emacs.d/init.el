@@ -39,14 +39,21 @@
 '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 (eval-after-load 'company
   '(add-to-list 'company-backends 'company-irony))
+(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)
+
 
 ;;Setup my pseudo-IDE environment for c-related files
 (defun setup-c-environment () (interactive) (company-mode) (linum-mode) (flycheck-mode) (irony-mode))
 (setq c-default-style "bsd" c-basic-offset 2)
+
+;;Setup my pseudo-IDE environment for haskell
+(defun setup-haskell-environment () (interactive) (flycheck-mode) (linum-mode))
        
 (add-hook 'c++-mode-hook 'setup-c-environment)
 (add-hook 'c-mode-hook 'setup-c-environment)
 (add-hook 'objc-mode-hook 'setup-c-environment)
+(add-hook 'haskell-mode-hook 'setup-haskell-environment)
+
 (setq company-idle-delay 0)
 (setq flycheck-idle-change-delay 1.5)
 
@@ -116,7 +123,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (evil-tutor key-chord evil powerline company-irony flycheck-irony irony solarized-theme oauth2 moe-theme)))
+    (shm flycheck-haskell evil-tutor key-chord evil powerline company-irony flycheck-irony irony solarized-theme oauth2 moe-theme)))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
