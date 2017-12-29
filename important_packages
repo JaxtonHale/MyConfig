@@ -4,16 +4,18 @@
 #Make sure to get fonts off of https://github.com/powerline/fonts/tree/master/DejaVuSansMono
 #And put them in /usr/share/fonts. This is so powerline properly displays in emacs -nw. Also make sure that this font is in use by emacs--it should be though, because my emacs config uses the powerline version of the font.
 
-sudo pacman -S redshift i3 emacs feh rofi chromium lxappearance termite pulseaudio alsa-utils alsa-lib git scrot screenfetch arc-icon-theme weechat xclip xf86-video-ati ttf-inconsolata youtube-dl lm_sensors ntfs-3g zsh mpc mpd ncmpcpp
+sudo pacman -S redshift i3 emacs feh rofi chromium lxappearance termite pulseaudio alsa-utils alsa-lib git scrot screenfetch arc-icon-theme weechat xclip xf86-video-ati ttf-inconsolata youtube-dl lm_sensors ntfs-3g zsh mpc mpd ncmpcpp deluge
 
 #xf86-video-ati is the opensource amd driver
 
 ##Then: uncomment [Multilib] section in /etc/pacman.conf and...
 pacman -S steam
 
-
 #Upon running the above pacman command, proceed to run sensors-detect in the terminal and say yes to practically everything. This is to display system temperatures. After the proper setup of sensors-detect you may run "sensors" in console to get computer temps.
 
+
+#AUR Stuff: install Trizen from the AUR manually with makepkg. Trizen is a AUR helper and pacman wrapper. Then get baka-mplayer for mpv video player
+trizen -S baka-mplayer-git
 
 ##Custom setup for EMACS:
 
