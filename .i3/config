@@ -200,7 +200,7 @@ hide_edge_borders both
 
 #Automatically put applications in workspaces in workspace 5
 assign [class="Steam"] 5
-assign [class="Chromium" ] 1
+assign [class="Firefox" ] 1
 
 ##EMACS DAEMON (use emacsclient)
 exec --no-startup-id emacs --daemon
@@ -209,7 +209,8 @@ exec --no-startup-id emacs --daemon
 
 exec --no-startup-id feh --randomize --bg-fill /shared_media/pictures/wallpapers/*
 exec --no-startup-id mpd
-exec --no-startup-id deluged
+exec --no-startup-id nm-applet
+#exec --no-startup-id deluged
 
 bindsym --release Print exec scrot -e 'mv $f /shared_media/pictures/screenshots/'
 bindsym --release $mod+Print exec scrot -s -e 'mv $f /shared_media/pictures/screenshots/'

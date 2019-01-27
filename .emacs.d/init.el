@@ -5,7 +5,7 @@
 
 ;;;;;Auto-install Packages:
 ; list the packages you want
-(setq package-list '(evil powerline company-irony flycheck-irony
+(setq package-list '(evil company-irony flycheck-irony
 			  irony solarized-theme moe-theme key-chord))
 
 ; list the repositories containing them
@@ -41,6 +41,8 @@
   '(add-to-list 'company-backends 'company-irony))
 (add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)
 
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)                 ; optional
 
 ;;Setup my pseudo-IDE environment for c-related files
 (defun setup-c-environment () (interactive) (company-mode) (linum-mode) (flycheck-mode) (irony-mode))
@@ -49,10 +51,13 @@
 ;;Setup my pseudo-IDE environment for haskell
 (defun setup-haskell-environment () (interactive) (flycheck-mode) (linum-mode))
        
+(defun setup-x86-environment () (interactive) (nasm-mode) (linum-mode))
+
 (add-hook 'c++-mode-hook 'setup-c-environment)
 (add-hook 'c-mode-hook 'setup-c-environment)
 (add-hook 'objc-mode-hook 'setup-c-environment)
 (add-hook 'haskell-mode-hook 'setup-haskell-environment)
+(add-hook 'asm-mode-hook 'setup-x86'environment)
 
 (setq company-idle-delay 0)
 (setq flycheck-idle-change-delay 1.5)
@@ -60,11 +65,10 @@
 ;;some random aesthetic stuff i decided to put in
 (require 'moe-theme)
 (moe-light)
-(require 'powerline)
-(powerline-default-theme)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (fringe-mode 0)
+(setq x-underline-at-descent-line t)
 
 ;vi emulation
 (require 'evil)
@@ -85,10 +89,10 @@
  '(cua-normal-cursor-color "#657b83")
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
- '(custom-enabled-themes (quote (moe-dark)))
+ '(custom-enabled-themes (quote (solarized-dark)))
  '(custom-safe-themes
    (quote
-    ("29de2d95284b6ab6e1f5e8ebfc0039f2aeea9d6a7589196f7176cd575892e528" "cd9604afb1d6a016ccbcc45c4a2abcd0c5680fd3a761459116f8b0516c21f345" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "4cbec5d41c8ca9742e7c31cc13d8d4d5a18bd3a0961c18eb56d69972bbcf3071" "b9cbfb43711effa2e0a7fbc99d5e7522d8d8c1c151a3194a4b176ec17c9a8215" "6952b5d43bbd4f1c6727ff61bc9bf5677d385e101433b78ada9c3f0e3787af06" default)))
+    ("a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" "29de2d95284b6ab6e1f5e8ebfc0039f2aeea9d6a7589196f7176cd575892e528" "cd9604afb1d6a016ccbcc45c4a2abcd0c5680fd3a761459116f8b0516c21f345" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "4cbec5d41c8ca9742e7c31cc13d8d4d5a18bd3a0961c18eb56d69972bbcf3071" "b9cbfb43711effa2e0a7fbc99d5e7522d8d8c1c151a3194a4b176ec17c9a8215" "6952b5d43bbd4f1c6727ff61bc9bf5677d385e101433b78ada9c3f0e3787af06" default)))
  '(fci-rule-color "#eee8d5")
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
@@ -123,7 +127,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (shm flycheck-haskell evil-tutor key-chord evil powerline company-irony flycheck-irony irony solarized-theme oauth2 moe-theme)))
+    (virtualenv company-irony-c-headers jedi nasm-mode x86-lookup shm flycheck-haskell evil-tutor key-chord evil company-irony flycheck-irony irony solarized-theme oauth2 moe-theme)))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
@@ -178,8 +182,6 @@
  '(powerline-inactive2 ((t (:inherit mode-line :background "grey20")))))
  
  ;Solarized powerline colors
-(setq powerline-color1 "#073642")
-(setq powerline-color2 "#002b36")
 
 (set-face-attribute 'mode-line nil
                      :foreground "#fdf6e3"
