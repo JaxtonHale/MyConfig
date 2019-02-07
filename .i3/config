@@ -212,8 +212,8 @@ exec --no-startup-id mpd
 exec --no-startup-id nm-applet
 #exec --no-startup-id deluged
 
-bindsym --release Print exec scrot -e 'mv $f /shared_media/pictures/screenshots/'
-bindsym --release $mod+Print exec scrot -s -e 'mv $f /shared_media/pictures/screenshots/'
+bindsym --release Print exec scrot -e 'mv $f ~/pictures/screenshots/'
+bindsym --release $mod+Print exec scrot -s -e 'mv $f ~/pictures/screenshots/'
 bindsym --release End exec "emacsclient -c"
 
 ##Cmus global hotkeys
